@@ -16,14 +16,14 @@
 
 + (void)initialize
 {
-	//configure iRate
-	[iRate sharedInstance].appStoreID = 412363063;
-	[iRate sharedInstance].debug = YES;
-}
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-	// Insert code here to initialize your application 
+    //set the bundle ID. normally you wouldn't need to do this
+    //as it is picked up automatically from your Info.plist file
+    //but we want to test with an app that's actually on the store
+    [iRate sharedInstance].applicationBundleID = @"com.charcoaldesign.RainbowBlocksLite";
+    [iRate sharedInstance].onlyPromptIfLatestVersion = NO;
+    
+    //enable preview mode
+    [iRate sharedInstance].previewMode = YES;
 }
 
 @end
